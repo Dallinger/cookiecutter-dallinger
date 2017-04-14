@@ -1,0 +1,28 @@
+[Experiment]
+mode = sandbox
+auto_recruit = true
+custom_variable = true
+num_participants = 2
+
+[MTurk]
+title = {{cookiecutter.experiment_name}}
+description = {{cookiecutter.experiment_description}}
+keywords = Psychology
+base_payment = 1.00
+lifetime = 24
+duration = 0.1
+contact_email_on_error = {{cookiecutter.author_email}}
+browser_exclude_rule = MSIE, mobile, tablet
+
+[Database]
+database_url = postgresql://postgres@localhost/dallinger
+database_size = standard-0
+
+[Server]
+dyno_type = free
+num_dynos_web = 1
+num_dynos_worker = 1
+host = 0.0.0.0
+notification_url = None
+clock_on = false
+logfile = -
