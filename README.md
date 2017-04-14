@@ -15,27 +15,27 @@ the following command:
 This will provide you with prompts for the following information about your
 experiment:
 
-    - `repo_name`: The Github repository name where experiment package will 
-    eventually live. This should not contain any spaces or special characters
-    other than `-` and `_`.
+- `repo_name`: The Github repository name where experiment package will 
+eventually live. This should not contain any spaces or special characters
+other than `-` and `_`.
 
-    - `package_name`: The python package name for your experiment. This should
-    be all lower case and not contain any spaces or special characters other
-    than `_`.
+- `package_name`: The python package name for your experiment. This should
+be all lower case and not contain any spaces or special characters other
+than `_`.
 
-    - `experiment_name`: A name for your experiment.
+- `experiment_name`: A name for your experiment.
 
-    - `experiment_class`: The python class name for your custom experiment
-    class. This should not contain any spaces or special characters.
+- `experiment_class`: The python class name for your custom experiment
+class. This should not contain any spaces or special characters.
 
-    - `experiment_description`: A short description of your experiment
+- `experiment_description`: A short description of your experiment
 
-    - `author`: The package author's full name
+- `author`: The package author's full name
 
-    - `author_email`: The contact email for the experiment author.
+- `author_email`: The contact email for the experiment author.
 
-    - `author_github`: The Github account name where the package will
-    eventually live.
+- `author_github`: The Github account name where the package will
+eventually live.
 
 
 Once you've answered those questions a new directory named with the
