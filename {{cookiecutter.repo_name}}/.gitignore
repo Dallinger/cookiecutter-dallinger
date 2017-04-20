@@ -43,4 +43,3 @@ snapshots/*
 !static/scripts/bundle.js
 
 data/*
-dallinger_griduniverse/snapshots
