@@ -42,7 +42,7 @@ Once you've answered those questions a new directory named with the
 `repo_name` you provided will be created. The package in that directory will
 contain a basic Dallinger experiment, an example Bot that runs through the
 experiment as a simulated browser, an automated test harness, and
-documentation generation tools. The pacakge can be installed with pip (`pip
+documentation generation tools. The package can be installed with pip (`pip
 install -e .`) and/or uploaded to the [Python Package Index
 (PyPI)](https://pypi.python.org/pypi).
 
