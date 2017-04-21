@@ -15,7 +15,7 @@ the following command:
 This will provide you with prompts for the following information about your
 experiment:
 
-- `repo_name`: The Github repository name where experiment package will 
+- `repo_name`: The GitHub repository name where experiment package will 
 eventually live. This should not contain any spaces or special characters
 other than `-` and `_`.
 
@@ -34,7 +34,7 @@ class. This should not contain any spaces or special characters.
 
 - `author_email`: The contact email for the experiment author.
 
-- `author_github`: The Github account name where the package will
+- `author_github`: The GitHub account name where the package will
 eventually live.
 
 
