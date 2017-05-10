@@ -29,7 +29,7 @@ class {{cookiecutter.experiment_class}}(Experiment):
     def __init__(self, session=None):
         """Call the same parent constructor, then call setup() if we have a session.
         """
-        super({{cookiecutter.experiment_name}}, self).__init__(session)
+        super({{cookiecutter.experiment_class}}, self).__init__(session)
         if session:
             self.experiment_repeats = 1
             self.custom_variable = config.get('custom_variable')

@@ -3,10 +3,7 @@
 import os
 import sys
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 
 if sys.argv[-1] == 'publish':
@@ -24,26 +21,20 @@ except (IOError, ImportError):
 # Get rid of Sphinx markup
 history = history.replace('.. :changelog:', '')
 
-doclink = """
-Documentation
--------------
-
-The full documentation is at http://{{cookiecutter.package_name}}.rtfd.org."""
-
 setup_args = dict(
     name='{{cookiecutter.package_name}}',
     version='0.1.0',
     description='{{cookiecutter.experiment_description}}',
-    long_description=readme + '\n\n' + doclink + '\n\n' + history,
+    long_description=readme + '\n\n' + history,
     author='{{cookiecutter.author}}',
     author_email='{{cookiecutter.author_email}}',
     url='https://github.com/{{cookiecutter.author_github}}/{{cookiecutter.repo_name}}',
-    packages=[
-        '{{cookiecutter.package_name}}',
-    ],
-    package_dir={'{{cookiecutter.package_name}}': '{{cookiecutter.package_name}}'},
+    packages=find_packages('.'),
+    package_dir={'': '.'},
+    namespace_packages=['{{cookiecutter.namespace}}'],
     include_package_data=True,
     install_requires=[
+        'setuptools',
     ],
     license='MIT',
     zip_safe=False,
@@ -63,7 +54,7 @@ setup_args = dict(
 )
 
 # Read in requirements.txt for dependencies.
-setup_args['install_requires'] = install_requires = []
+install_requires = setup_args['install_requires']
 setup_args['dependency_links'] = dependency_links = []
 with open('requirements.txt') as f:
     for line in f.readlines():

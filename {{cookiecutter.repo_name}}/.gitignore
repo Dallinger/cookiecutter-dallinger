@@ -43,3 +43,4 @@ snapshots/*
 !static/scripts/bundle.js
 
 data/*
+{{cookiecutter.namespace}}/{{cookiecutter.experiment_name}}/snapshots

@@ -1,8 +1,9 @@
 {
-    "repo_name": "dallinger_testexperiment",
+    "namespace": "dlgr_contrib",
+    "experiment_name": "testexperiment",
+    "repo_name": "{{cookiecutter.namespace|lower|replace('-','_')}}.{{cookiecutter.experiment_name|lower|replace('-','_')}}",
     "package_name": "{{cookiecutter.repo_name|lower|replace('-','_')}}",
-    "experiment_name": "TestExperiment",
-    "experiment_class": "{{cookiecutter.experiment_name|replace(' ', '_')|replace('-', '_')}}",
+    "experiment_class": "TestExperiment",
     "experiment_description": "A simple Dallinger experiment.",
     "author": "Jordan Suchow",
     "author_github": "suchow",
