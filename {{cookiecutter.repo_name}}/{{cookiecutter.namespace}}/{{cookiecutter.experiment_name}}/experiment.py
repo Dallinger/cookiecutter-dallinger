@@ -31,10 +31,13 @@ class {{cookiecutter.experiment_class}}(Experiment):
         """
         super({{cookiecutter.experiment_class}}, self).__init__(session)
         if session:
-            self.experiment_repeats = 1
-            self.custom_variable = config.get('custom_variable')
-            self.num_participants = config.get('num_participants', 1)
             self.setup()
+
+    def configure(self):
+        super({{cookiecutter.experiment_class}}, self).configure()
+        self.experiment_repeats = 1
+        self.custom_variable = config.get('custom_variable')
+        self.num_participants = config.get('num_participants', 1)
 
     def create_network(self):
         """Return a new network."""
