@@ -44,3 +44,21 @@ snapshots/*
 
 data/*
 {{cookiecutter.namespace}}/{{cookiecutter.experiment_name}}/snapshots
+{{cookiecutter.namespace}}/{{cookiecutter.experiment_name}}/data/*
+
+.tox/*
+*.egg-info/*
+.cache
+.cache/*
+
+docs/build/*
+dlgr/griduniverse/dump.rdb
+
+*.DS_Store
+
+bin
+include
+lib
+local
+selenium
+share
