@@ -38,7 +38,7 @@ $(document).ready(function() {
   $("#submit-response").click(function() {
     $("#submit-response").addClass('disabled');
     $("#submit-response").html('Sending...');
-    dallinger.creatInfo(my_node_id, {contents: "Submitted", info_type: "Info"})
+    dallinger.createInfo(my_node_id, {contents: "Submitted", info_type: "Info"})
     .done(function (resp) {
       dallinger.allowExit();
       dallinger.goToPage('questionnaire');
