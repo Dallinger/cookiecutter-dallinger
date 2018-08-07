@@ -1,4 +1,4 @@
-dallinger>=3.0.0
+dallinger>=3.5.0
 alabaster==0.7.9
 coverage==4.3.4
 coverage_pth==0.0.1

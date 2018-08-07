@@ -20,7 +20,7 @@ $(document).ready(function() {
     store.set("mode", dallinger.getUrlParameter("mode"));
 
     dallinger.allowExit();
-    window.location.href = '/instructions';
+    dallinger.goToPage('instructions');
   });
 
   // Consent to the experiment.
@@ -32,7 +32,7 @@ $(document).ready(function() {
   // Consent to the experiment.
   $("#go-to-experiment").click(function() {
     dallinger.allowExit();
-    window.location.href = '/exp';
+    dallinger.goToPage('exp');
   });
 
   $("#submit-response").click(function() {
@@ -44,6 +44,7 @@ $(document).ready(function() {
       dallinger.goToPage('questionnaire');
     })
     .fail(function (rejection) {
+      dallinger.allowExit();
       dallinger.error(rejection);
     });
   });
@@ -59,6 +60,7 @@ var create_agent = function() {
     $("#submit-response").removeClass('disabled');
   })
   .fail(function (rejection) {
+    dallinger.allowExit();
     dallinger.error(rejection);
   });
 };
