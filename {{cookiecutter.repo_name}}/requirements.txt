@@ -1,1 +1,3 @@
-dallinger==3.0.0
+-c constraints.txt
+dallinger
+requests

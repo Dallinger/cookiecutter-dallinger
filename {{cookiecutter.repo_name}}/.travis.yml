@@ -1,14 +1,43 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
+dist: trusty
+sudo: required
 
-python:
-  - "2.7"
+matrix:
+  include:
+  - python: 2.7
+    env: TOXENV=py27
+  - python: 3.6
+    env: TOXENV=py36
+  - python: 3.6
+    env: TOXENV=style
+  - python: 3.6
+    env: TOXENV=docs
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: 
-  - pip install -r requirements.txt
+addons:
+  postgresql: "9.4"
+  apt:
+    sources:
+    - heroku
+    packages:
+    - pandoc
+    - enchant
+    - heroku-toolbelt
+    - redis-server
+services:
+  - redis-server
 
-# command to run tests, e.g. python setup.py test
+install:
+  - pip install --upgrade pip
+  - pip install tox==3.1.2
+
+before_script:
+  - createuser dallinger --createdb
+  - createdb -O dallinger dallinger
+  - createdb -O dallinger dallinger-import
+
+env:
+  global:
+    - DATABASE_URL=postgresql://dallinger@localhost/dallinger
+
 script:
-  - py.test
+  - tox
