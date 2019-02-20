@@ -52,3 +52,10 @@ requirements, using the command:
     pip install -r dev-requirements.txt
 
 Then you can run the test suite and validation tools using the `tox` command.
+
+Your experiment package will also contain a `Vagrantfile` which is intended to
+create and configure virtual machines using [Vagrant](https://www.vagrantup.com/).
+Once you've installed Vagrant, you should be able to use `vagrant up` from the
+experiment directory to create a Linux virtual machine with dallinger and its
+dependencies installed, and `vagrant ssh` to connect to it. More details can
+be found in the [Dallinger documentation](https://dallinger.readthedocs.io/en/latest/vagrant_setup.html)
