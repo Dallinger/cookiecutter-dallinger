@@ -3,16 +3,14 @@ from dallinger.config import get_config
 from dallinger.experiments import Experiment
 from dallinger.networks import Empty
 try:
-    from bots import Bot
+    from .bots import Bot
     Bot = Bot
 except ImportError:
     pass
 
-config = get_config()
-
 
 def extra_parameters():
-
+    config = get_config()
     types = {
         'custom_variable': bool,
         'num_participants': int,
@@ -34,6 +32,7 @@ class {{cookiecutter.experiment_class}}(Experiment):
             self.setup()
 
     def configure(self):
+        config = get_config()
         super({{cookiecutter.experiment_class}}, self).configure()
         self.experiment_repeats = 1
         self.custom_variable = config.get('custom_variable')
