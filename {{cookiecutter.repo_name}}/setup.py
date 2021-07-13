@@ -51,6 +51,12 @@ setup_args = dict(
             '{{cookiecutter.experiment_class}} = {{cookiecutter.package_name}}.experiment:{{cookiecutter.experiment_class}}',
         ],
     },
+    extras_require={
+        'test': [
+            'pytest',
+            'selenium',
+            'pexpect',
+        ]
 )
 
 setup(**setup_args)
